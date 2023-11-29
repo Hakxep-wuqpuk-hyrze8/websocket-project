@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat app</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"
+      integrity="sha512-Xm9qbB6Pu06k3PUwPj785dyTl6oHxgsv9nHp7ej7nCpAqGZT3OZpsELuCYX05DdonFpTlBpXMOxjavIAIUwr0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main>
+      <form class="invite-notification invite-notification--hidden">
+        <p class="invite-notification__text">邀請你嘿嘿嘿</p>
+        <button type="submit" class="invite-notification__success">
+          Enter
+        </button>
+        <button type="button" class="invite-notification__cancel">
+          Cancel
+        </button>
+      </form>
+
+      <form class="form-join">
+        <input
+          type="text"
+          id="name"
+          placeholder="Your name"
+          size="5"
+          maxlength="8"
+          required
+        />
+        <input
+          id="room"
+          type="text"
+          placeholder="Chat name"
+          size="5"
+          required
+        />
+        <button type="submit" id="join">Join</button>
+      </form>
+
+      <form class="form-invite">
+        <input
+          type="text"
+          id="invited-name"
+          placeholder="Invited name"
+          size="5"
+          maxlength="8"
+          required
+        />
+        <button type="submit" class="invite">Invite</button>
+      </form>
+
+      <ul class="chat-display"></ul>
+
+      <p class="user-list"></p>
+
+      <p class="room-list"></p>
+
+      <p class="activity"></p>
+
+      <form class="form-msg">
+        <input type="text" id="message" placeholder="Your message" required />
+        <button type="submit">Send</button>
+      </form>
+    </main>
+  </body>
+</html>
